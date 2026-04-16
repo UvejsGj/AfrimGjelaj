@@ -1,0 +1,182 @@
+/* Header, language switch, theme toggle, and nav */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(8, 21, 35, 0.78);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem 0.8rem;
+  flex-wrap: wrap;
+}
+
+.header-inner .logo {
+  order: 1;
+}
+
+.header-inner .site-nav {
+  order: 2;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-inner .lang-switch {
+  order: 3;
+}
+
+.header-inner .theme-toggle {
+  order: 4;
+}
+
+.header-inner .nav-toggle {
+  order: 5;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.14rem;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.logo:hover {
+  color: #fff;
+}
+
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lang-btn {
+  margin: 0;
+  padding: 0.34rem 0.68rem;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  color: #c8d5ea;
+}
+
+.lang-btn + .lang-btn {
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.lang-btn.is-active {
+  background: #fff;
+  color: #13375f;
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #dce7fb;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.34rem 0.72rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  font-size: 0.86rem;
+  line-height: 1;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #ecf2ff;
+  margin: 0 auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.site-nav {
+  flex: 1;
+  min-width: 0;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  justify-content: flex-end;
+}
+
+.nav-list a {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #d4deee;
+  text-decoration: none;
+  padding: 0.36rem 0.66rem;
+  border-radius: 999px;
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}

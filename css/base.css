@@ -1,0 +1,134 @@
+/* Base tokens, reset, typography, and global primitives */
+
+:root {
+  --bg: #081523;
+  --bg-2: #0f2035;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-2: rgba(255, 255, 255, 0.1);
+  --card: #ffffff;
+  --card-soft: #f5f9ff;
+  --text: #0f1724;
+  --text-muted: #526277;
+  --text-on-dark: #e6edf8;
+  --accent: #2968f3;
+  --accent-2: #14b8a6;
+  --accent-hover: #1f56cc;
+  --border: rgba(15, 58, 110, 0.16);
+  --radius: 14px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 10px 25px rgba(7, 20, 36, 0.08);
+  --shadow-md: 0 16px 44px rgba(4, 18, 35, 0.18);
+  --font-sans: "Source Sans 3", system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --max: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  background:
+    radial-gradient(1300px 750px at 0% -10%, #173558 0%, rgba(23, 53, 88, 0) 70%),
+    radial-gradient(1000px 700px at 100% 0%, #153245 0%, rgba(21, 50, 69, 0) 68%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 36%, #e9f0fa 36%, #eef4fb 100%);
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 4.4vw, 3.2rem);
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(1.65rem, 2.3vw, 2rem);
+  margin: 0 0 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 4px;
+  margin-top: 0.4rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+h3 {
+  font-size: 1.16rem;
+  margin: 1.55rem 0 0.6rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.inline-code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+  background: #e6effc;
+  color: #20406d;
+  padding: 0.12em 0.35em;
+  border-radius: 6px;
+}
+
+.per-tu-mbushur {
+  font-size: 0.82em;
+  font-style: italic;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
