@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,6 +12,9 @@
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip_link">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress-bar"></span>
+  </div>
 
   <header class="site-header">
     <div class="header-inner">
@@ -20,10 +23,6 @@
         <button type="button" class="lang-btn is-active" data-set-lang="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-btn" data-set-lang="sq" aria-pressed="false">SQ</button>
       </div>
-      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Switch to light theme">
-        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-        <span class="theme-toggle-text">Dark</span>
-      </button>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -39,12 +38,13 @@
           <li><a href="#students" data-i18n="nav_students">Students</a></li>
           <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
         </ul>
+        <span class="nav-active-indicator" aria-hidden="true"></span>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section id="overview" class="hero section" data-search="homepage overview name affiliation bio përmbledhje profili">
+    <section id="overview" class="hero section scene scene-hero" data-mood="hero" data-search="homepage overview name affiliation bio përmbledhje profili">
       <div class="hero-grid">
         <div class="hero-photo-wrap">
           <!-- Portrait: default SVG; optional high-res JPEG at images/profile.jpg (update src). PLACEHOLDER; per tu mbushur -->
@@ -73,6 +73,20 @@
             <li data-i18n="highlight_3">Industry experience: CNC programming, CAD/CAM, and 40+ applied manufacturing projects (per public profile)</li>
             <li data-i18n="highlight_4">Collaboration with GIZ and KIMERK as a CNC / advanced manufacturing trainer (since 2017)</li>
           </ul>
+          <div class="hero-stats" aria-label="Key impact indicators">
+            <div class="hero-stat">
+              <strong data-count-to="40">0</strong>
+              <span>Applied projects</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-count-to="2017">0</strong>
+              <span>Training since</span>
+            </div>
+            <div class="hero-stat">
+              <strong data-count-to="2022">0</strong>
+              <span>Associate Professor</span>
+            </div>
+          </div>
           <p class="hero-actions">
             <a class="btn btn-primary" href="https://scholar.google.com/citations?user=kkLyTTYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" data-i18n="btn_scholar">Google Scholar</a>
             <a class="btn btn-secondary" href="#contact" data-i18n="btn_contact">Get in touch</a>
@@ -81,7 +95,7 @@
       </div>
     </section>
 
-    <section id="about" class="section section-alt" data-search="about biography education career maribor prishtina degrees philosophy rreth">
+    <section id="about" class="section section-alt scene" data-mood="about" data-search="about biography education career maribor prishtina degrees philosophy rreth">
       <div class="container narrow">
         <h2 data-i18n="about_h2">About</h2>
         <h3 data-i18n="about_edu_h3">Education</h3>
@@ -107,7 +121,7 @@
       </div>
     </section>
 
-    <section id="research" class="section" data-search="research projects grants collaboration industry flexsim cnc kërkim projekt">
+    <section id="research" class="section scene" data-mood="research" data-search="research projects grants collaboration industry flexsim cnc kërkim projekt">
       <div class="container">
         <h2 data-i18n="research_h2">Research &amp; projects</h2>
         <div class="card-grid">
@@ -131,7 +145,7 @@
       </div>
     </section>
 
-    <section id="publications" class="section section-alt" data-search="publications papers journal scholar doi thesis machines famena publikime">
+    <section id="publications" class="section section-alt scene" data-mood="publications" data-search="publications papers journal scholar doi thesis machines famena publikime">
       <div class="container">
         <h2 data-i18n="pub_h2">Publications</h2>
         <ul class="pub-list searchable-list">
@@ -161,7 +175,7 @@
       </div>
     </section>
 
-    <section id="teaching" class="section" data-search="teaching courses syllabus automation manufacturing prishtina mësimdhënie">
+    <section id="teaching" class="section scene" data-mood="teaching" data-search="teaching courses syllabus automation manufacturing prishtina mësimdhënie">
       <div class="container narrow">
         <h2 data-i18n="teaching_h2">Teaching</h2>
         <h3>LËNDËT</h3>
@@ -221,7 +235,7 @@
       </div>
     </section>
 
-    <section id="awards" class="section section-alt" data-search="awards recognition fellowships honors çmime">
+    <section id="awards" class="section section-alt scene" data-mood="awards" data-search="awards recognition fellowships honors çmime">
       <div class="container narrow">
         <h2 data-i18n="awards_h2">Awards &amp; recognition</h2>
         <ul class="muted-list">
@@ -232,14 +246,14 @@
       </div>
     </section>
 
-    <section id="students" class="section" data-search="students mentorship phd masters thesis alumni prospective studentë">
+    <section id="students" class="section scene" data-mood="students" data-search="students mentorship phd masters thesis alumni prospective studentë">
       <div class="container narrow">
         <h2 data-i18n="students_h2">Students &amp; mentorship</h2>
       </div>
     </section>
 
 
-    <section id="contact" class="section section-alt" data-search="contact email office hours linkedin scholar academia kontakt">
+    <section id="contact" class="section section-alt scene" data-mood="contact" data-search="contact email office hours linkedin scholar academia kontakt">
       <div class="container narrow">
         <h2 data-i18n="contact_h2">Contact</h2>
         <dl class="contact-dl">

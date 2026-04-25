@@ -1,4 +1,4 @@
-/* Theme overrides, reveal animations, and responsive/print rules */
+/* Motion and responsive/print rules */
 
 .section.is-hidden,
 .hero.is-hidden {
@@ -22,6 +22,25 @@
   transform: translateY(0) scale(1);
 }
 
+.scene {
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.scene.scene-past {
+  opacity: 0.74;
+  transform: translateY(-8px);
+}
+
+.scene.scene-current {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scene.scene-next {
+  opacity: 0.92;
+  transform: translateY(10px);
+}
+
 .reveal-delay-1 {
   transition-delay: 0.06s;
 }
@@ -36,186 +55,6 @@
 
 .reveal-delay-4 {
   transition-delay: 0.24s;
-}
-
-html[data-theme="light"] body {
-  background:
-    radial-gradient(1300px 750px at 0% -10%, #c8def9 0%, rgba(200, 222, 249, 0) 70%),
-    radial-gradient(1000px 700px at 100% 0%, #d4ebf1 0%, rgba(212, 235, 241, 0) 68%),
-    linear-gradient(180deg, #eaf3ff 0%, #edf4fb 36%, #f8fbff 36%, #f7fbff 100%);
-}
-
-html[data-theme="light"] .site-header {
-  background: rgba(244, 249, 255, 0.88);
-  border-bottom: 1px solid rgba(14, 42, 79, 0.14);
-}
-
-html[data-theme="light"] .logo {
-  color: #11345f;
-}
-
-html[data-theme="light"] .logo:hover {
-  color: #0d2a4d;
-}
-
-html[data-theme="light"] .lang-switch,
-html[data-theme="light"] .theme-toggle {
-  border-color: rgba(17, 52, 95, 0.22);
-  background: rgba(17, 52, 95, 0.05);
-}
-
-html[data-theme="light"] .lang-btn,
-html[data-theme="light"] .theme-toggle {
-  color: #27466d;
-}
-
-html[data-theme="light"] .lang-btn + .lang-btn {
-  border-left-color: rgba(17, 52, 95, 0.2);
-}
-
-html[data-theme="light"] .lang-btn.is-active {
-  background: #1b4f8f;
-  color: #fff;
-}
-
-html[data-theme="light"] .nav-toggle {
-  border-color: rgba(16, 52, 95, 0.28);
-  background: rgba(17, 52, 95, 0.05);
-}
-
-html[data-theme="light"] .nav-toggle-bar {
-  background: #204066;
-}
-
-html[data-theme="light"] .nav-list a {
-  color: #27466d;
-}
-
-html[data-theme="light"] .nav-list a:hover,
-html[data-theme="light"] .nav-list a:focus-visible {
-  color: #133f74;
-  background: rgba(35, 85, 144, 0.12);
-}
-
-html[data-theme="light"] .hero {
-  color: #112138;
-}
-
-html[data-theme="light"] .hero-text {
-  background: rgba(255, 255, 255, 0.86);
-  border-color: rgba(17, 52, 95, 0.16);
-}
-
-html[data-theme="light"] .hero-text .eyebrow {
-  color: #244f81;
-}
-
-html[data-theme="light"] .title-line,
-html[data-theme="light"] .lead,
-html[data-theme="light"] .highlights li {
-  color: #203957;
-}
-
-html[data-theme="light"] .btn-secondary {
-  color: #204f8d;
-  border-color: rgba(27, 79, 143, 0.45);
-  background: rgba(27, 79, 143, 0.06);
-}
-
-html[data-theme="light"] .btn-secondary:hover {
-  background: rgba(27, 79, 143, 0.14);
-}
-
-html[data-theme="dark"] body {
-  background:
-    radial-gradient(1300px 750px at 0% -10%, #173558 0%, rgba(23, 53, 88, 0) 70%),
-    radial-gradient(1000px 700px at 100% 0%, #153245 0%, rgba(21, 50, 69, 0) 68%),
-    linear-gradient(180deg, #081523 0%, #0c1f33 46%, #0a1b2d 100%);
-}
-
-html[data-theme="dark"] .section {
-  background: transparent;
-}
-
-html[data-theme="dark"] .section-alt {
-  background: linear-gradient(180deg, rgba(10, 24, 40, 0.9) 0%, rgba(12, 29, 47, 0.95) 100%);
-}
-
-html[data-theme="dark"] h2,
-html[data-theme="dark"] h3,
-html[data-theme="dark"] p,
-html[data-theme="dark"] li,
-html[data-theme="dark"] dd,
-html[data-theme="dark"] dt {
-  color: #d9e6fb;
-}
-
-html[data-theme="dark"] .section .section-intro,
-html[data-theme="dark"] .section .fineprint,
-html[data-theme="dark"] .section .muted,
-html[data-theme="dark"] .section .per-tu-mbushur {
-  color: #9fb5d4;
-}
-
-html[data-theme="dark"] .card {
-  background: linear-gradient(180deg, rgba(17, 37, 59, 0.95) 0%, rgba(12, 30, 50, 0.98) 100%);
-  border-color: rgba(148, 180, 222, 0.28);
-  box-shadow: 0 14px 34px rgba(3, 12, 25, 0.46);
-}
-
-html[data-theme="dark"] .card h3,
-html[data-theme="dark"] .card p {
-  color: #dde9fb;
-}
-
-html[data-theme="dark"] .pub-list li {
-  border-bottom-color: rgba(155, 189, 236, 0.3);
-}
-
-html[data-theme="dark"] .contact-dl {
-  background: linear-gradient(180deg, rgba(17, 37, 59, 0.95) 0%, rgba(12, 30, 50, 0.98) 100%);
-  border-color: rgba(148, 180, 222, 0.28);
-  box-shadow: 0 14px 34px rgba(3, 12, 25, 0.46);
-}
-
-html[data-theme="dark"] .contact-dl dt {
-  color: #a8c0e3;
-}
-
-html[data-theme="dark"] .inline-links a {
-  background: rgba(46, 96, 171, 0.22);
-  border-color: rgba(139, 176, 227, 0.35);
-  color: #d8e7ff;
-}
-
-html[data-theme="dark"] .inline-links a:hover {
-  background: rgba(70, 126, 212, 0.26);
-}
-
-html[data-theme="dark"] .subjects-table {
-  background: linear-gradient(180deg, rgba(17, 37, 59, 0.95) 0%, rgba(12, 30, 50, 0.98) 100%);
-  border-color: rgba(148, 180, 222, 0.28);
-  box-shadow: 0 14px 34px rgba(3, 12, 25, 0.46);
-}
-
-html[data-theme="dark"] .subjects-table th {
-  background: rgba(46, 96, 171, 0.2);
-  color: #c8dcfa;
-}
-
-html[data-theme="dark"] .subjects-table td {
-  color: #d9e6fb;
-  border-bottom-color: rgba(155, 189, 236, 0.3);
-}
-
-html[data-theme="dark"] .site-footer {
-  background: rgba(8, 21, 35, 0.9);
-  border-top-color: rgba(148, 180, 222, 0.3);
-  color: #a8c0e3;
-}
-
-html[data-theme="dark"] .site-footer p {
-  color: #a8c0e3;
 }
 
 @media (max-width: 960px) {
@@ -269,6 +108,10 @@ html[data-theme="dark"] .site-footer p {
   .hero-actions {
     justify-content: center;
   }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 961px) {
@@ -285,12 +128,6 @@ html[data-theme="dark"] .site-footer p {
     flex-shrink: 0;
   }
 
-  .header-inner .theme-toggle {
-    order: 4;
-    margin-left: 0.1rem;
-    flex-shrink: 0;
-  }
-
   .header-inner .nav-toggle {
     display: none !important;
   }
@@ -304,8 +141,7 @@ html[data-theme="dark"] .site-footer p {
   .site-header,
   .site-footer,
   .nav-toggle,
-  .lang-switch,
-  .theme-toggle {
+  .lang-switch {
     display: none !important;
   }
 
@@ -328,4 +164,22 @@ html[data-theme="dark"] .site-footer p {
     transform: none !important;
     transition: none !important;
   }
+
+  .scene,
+  .card,
+  .hero-photo-frame,
+  .hero-text,
+  .pub-list li,
+  .subjects-table tbody tr {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+body.is-low-power .scene::before {
+  display: none;
+}
+
+body.is-low-power .card {
+  transition: box-shadow 0.15s ease !important;
 }

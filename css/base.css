@@ -1,23 +1,25 @@
 /* Base tokens, reset, typography, and global primitives */
 
 :root {
-  --bg: #081523;
-  --bg-2: #0f2035;
-  --surface: rgba(255, 255, 255, 0.06);
-  --surface-2: rgba(255, 255, 255, 0.1);
+  --bg: #f8fafc;
+  --bg-2: #f1f5f9;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
   --card: #ffffff;
-  --card-soft: #f5f9ff;
-  --text: #0f1724;
-  --text-muted: #526277;
-  --text-on-dark: #e6edf8;
-  --accent: #2968f3;
-  --accent-2: #14b8a6;
-  --accent-hover: #1f56cc;
-  --border: rgba(15, 58, 110, 0.16);
-  --radius: 14px;
-  --radius-lg: 24px;
-  --shadow-sm: 0 10px 25px rgba(7, 20, 36, 0.08);
-  --shadow-md: 0 16px 44px rgba(4, 18, 35, 0.18);
+  --card-soft: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --text-on-dark: #e2e8f0;
+  --accent: #0f172a;
+  --accent-2: #334155;
+  --accent-hover: #1e293b;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --scene-accent: #0f172a;
+  --scene-accent-soft: rgba(148, 163, 184, 0.16);
   --font-sans: "Source Sans 3", system-ui, sans-serif;
   --font-serif: "Source Serif 4", Georgia, serif;
   --max: 1120px;
@@ -45,10 +47,7 @@ body {
   font-size: 1.05rem;
   line-height: 1.6;
   color: var(--text);
-  background:
-    radial-gradient(1300px 750px at 0% -10%, #173558 0%, rgba(23, 53, 88, 0) 70%),
-    radial-gradient(1000px 700px at 100% 0%, #153245 0%, rgba(21, 50, 69, 0) 68%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 36%, #e9f0fa 36%, #eef4fb 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
   min-height: 100vh;
 }
 
@@ -92,10 +91,10 @@ h2::after {
   content: "";
   display: block;
   width: 60%;
-  height: 4px;
-  margin-top: 0.4rem;
+  height: 2px;
+  margin-top: 0.28rem;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, #94a3b8, #cbd5e1);
 }
 
 h3 {
@@ -109,6 +108,7 @@ p {
 
 a {
   color: var(--accent);
+  font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
@@ -120,8 +120,8 @@ a:hover {
 .inline-code {
   font-family: ui-monospace, monospace;
   font-size: 0.9em;
-  background: #e6effc;
-  color: #20406d;
+  background: #e2e8f0;
+  color: #0f172a;
   padding: 0.12em 0.35em;
   border-radius: 6px;
 }
