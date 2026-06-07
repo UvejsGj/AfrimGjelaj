@@ -86,6 +86,14 @@
   outline-offset: 2px;
 }
 
+.theme-toggle svg {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] .theme-toggle svg {
+  transform: rotate(180deg);
+}
+
 .theme-toggle .icon-sun {
   display: none;
 }

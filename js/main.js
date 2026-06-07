@@ -91,14 +91,48 @@
         btn.setAttribute("aria-label", dark ? pack.aria_theme_light : pack.aria_theme_dark);
       }
     }
-    btn.addEventListener("click", function () {
-      var dark = document.documentElement.getAttribute("data-theme") === "dark";
-      var next = dark ? "light" : "dark";
+    function applyTheme(next) {
       document.documentElement.setAttribute("data-theme", next);
       try {
         localStorage.setItem("afrim-gjelaj-theme", next);
       } catch (e) {}
       sync();
+    }
+    btn.addEventListener("click", function () {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      var next = dark ? "light" : "dark";
+      var root = document.documentElement;
+
+      // Reduced-motion: switch instantly.
+      if (reduceMotion) {
+        applyTheme(next);
+        return;
+      }
+
+      // Preferred: circular reveal expanding from the toggle button.
+      if (typeof document.startViewTransition === "function") {
+        var rect = btn.getBoundingClientRect();
+        var x = rect.left + rect.width / 2;
+        var y = rect.top + rect.height / 2;
+        var endRadius = Math.hypot(
+          Math.max(x, window.innerWidth - x),
+          Math.max(y, window.innerHeight - y)
+        );
+        root.style.setProperty("--vt-x", x + "px");
+        root.style.setProperty("--vt-y", y + "px");
+        root.style.setProperty("--vt-r", endRadius + "px");
+        document.startViewTransition(function () {
+          applyTheme(next);
+        });
+        return;
+      }
+
+      // Fallback: smooth site-wide color crossfade.
+      root.classList.add("theme-anim");
+      applyTheme(next);
+      window.setTimeout(function () {
+        root.classList.remove("theme-anim");
+      }, 600);
     });
     sync();
   }
