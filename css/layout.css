@@ -1,0 +1,80 @@
+/* Section scaffolding, ambient scene backdrops, and shared utilities */
+
+.section {
+  padding: 3rem 1.25rem;
+  scroll-margin-top: 7rem;
+  position: relative;
+  overflow: clip;
+}
+
+.section-alt {
+  background: var(--surface-2);
+}
+
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 780px;
+}
+
+.section-intro {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.35rem;
+}
+
+/* Ambient per-section background textures */
+.scene::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.7;
+  background: radial-gradient(900px 360px at 12% 0%, var(--scene-accent-soft), transparent 72%);
+}
+
+.scene[data-mood="research"]::before {
+  background:
+    linear-gradient(115deg, rgba(51, 65, 85, 0.08) 0%, transparent 48%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.12) 0,
+      rgba(148, 163, 184, 0.12) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+}
+
+.scene[data-mood="teaching"]::before {
+  background:
+    radial-gradient(circle at 82% 22%, rgba(100, 116, 139, 0.16) 0, transparent 40%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(148, 163, 184, 0.1) 0,
+      rgba(148, 163, 184, 0.1) 1px,
+      transparent 1px,
+      transparent 26px
+    );
+}
+
+.scene[data-mood="publications"]::before {
+  background: linear-gradient(120deg, rgba(100, 116, 139, 0.12), transparent 40%);
+}
+
+/* Shared list / text utilities used by multiple sections */
+.muted-list {
+  padding-left: 1.2rem;
+}
+
+.fineprint,
+.muted {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.text-link {
+  font-weight: 700;
+}

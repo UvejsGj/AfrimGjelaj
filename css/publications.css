@@ -1,0 +1,38 @@
+/* Publications list */
+
+.pub-list {
+  padding-left: 1.2rem;
+}
+
+.pub-list li {
+  margin-bottom: 0.65rem;
+  padding: 0.2rem 0.2rem 0.3rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  border-radius: 8px;
+}
+
+.pub-list li:last-child {
+  border-bottom: none;
+}
+
+.pub-list.has-focus-item li {
+  opacity: 0.38;
+}
+
+.pub-list.has-focus-item li.is-focus-item {
+  opacity: 1;
+  transform: translateX(5px);
+  background: var(--hover-soft);
+}
+
+.pub-list li.pub-note {
+  list-style: none;
+  margin-left: -1.2rem;
+  margin-top: 0.7rem;
+  padding-left: 0;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-bottom: none;
+}

@@ -1,5 +1,14 @@
-/* Entrypoint stylesheet to keep imports tidy */
+/* Entrypoint stylesheet — global first, then one file per section, then motion. */
 @import url("./base.css");
 @import url("./header.css");
-@import url("./content.css");
+@import url("./layout.css");
+@import url("./hero.css");
+@import url("./about.css");
+@import url("./research.css");
+@import url("./publications.css");
+@import url("./teaching.css");
+@import url("./awards.css");
+@import url("./students.css");
+@import url("./contact.css");
+@import url("./footer.css");
 @import url("./themes-and-motion.css");

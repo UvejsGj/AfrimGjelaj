@@ -1,0 +1,50 @@
+/* Contact — details list and profile links */
+
+.contact-dl {
+  margin: 0;
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: none;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.contact-dl dt {
+  font-weight: 700;
+  margin-top: 1rem;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.contact-dl dt:first-child {
+  margin-top: 0;
+}
+
+.contact-dl dd {
+  margin: 0.3rem 0 0;
+}
+
+.inline-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
+}
+
+.inline-links a {
+  display: inline-block;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inline-links a:hover {
+  background: var(--border);
+}

@@ -159,10 +159,3 @@ a:hover {
   padding: 0.12em 0.35em;
   border-radius: 6px;
 }
-
-.per-tu-mbushur {
-  font-size: 0.82em;
-  font-style: italic;
-  color: var(--text-muted);
-  white-space: nowrap;
-}
