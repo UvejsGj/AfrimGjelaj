@@ -37,22 +37,26 @@
       stat_assoc_prof: "Associate Professor",
       about_h2: "About",
       about_edu_h3: "Education",
+      about_edu_bsc_msc_html:
+        '<strong>BSc &amp; MSc in Mechanical Engineering</strong> — University of Prishtina “Hasan Prishtina”, Faculty of Mechanical Engineering (Kosovo).',
       about_edu_li1_html:
-        '<strong>Doctor of Science</strong>, Manufacturing and Automation — University of Maribor, Faculty of Mechanical Engineering (Slovenia). Dissertation: <em>Automated and Intelligent Programming of CNC Machine Tools</em> (<a href="https://dk.um.si/IzpisGradiva.php?id=46159&amp;lang=eng" target="_blank" rel="noopener noreferrer">University of Maribor repository</a>).',
+        '<strong>PhD (Dr.sc.)</strong>, Manufacturing &amp; Automation — University of Maribor, Faculty of Mechanical Engineering (Slovenia), 2014. Dissertation: <em>Automated and Intelligent Programming of CNC Machine Tools</em> (“Samodejno in inteligentno programiranje CNC strojev”); supervisor Prof. Jože Balič, co-supervisor Doc. Dr. Mirko Ficko (<a href="https://dk.um.si/IzpisGradiva.php?id=46159&amp;lang=eng" target="_blank" rel="noopener noreferrer">DKUM repository</a>).',
       about_edu_li2_html:
         "<strong>Master’s practical work</strong> (2007–2008) — Juraform E.K. Rechberghausen (Germany), CNC milling using Mastercam.",
       about_career_h3: "Career",
       career_li1:
         "<strong>Associate Professor</strong> — University of Prishtina, Faculty of Mechanical Engineering (September 2022–present).",
       career_li2:
-        "<strong>Assistant Professor</strong> — Department of Production and Automation, same faculty (October 2017–September 2022).",
+        "<strong>Assistant Professor</strong> — Department of Manufacturing and Automation, same faculty (October 2017–September 2022).",
+      career_li5:
+        "<strong>CNC trainer</strong> — GIZ &amp; KIMERK Kosova (2017–present): turning, milling, machining centers, CNC plasma, and 3D printing for the metal industry.",
       career_li3:
         "<strong>Autodesk Inventor designer</strong> — MTA2 Hebeprofi (March–August 2013): FMS-style layouts, 2D/3D/assembly design.",
       career_li4:
         "<strong>CNC programmer</strong> — Kosova Steel (2007–2008): milling, lathe, machining centers, CNC plasma.",
       about_ri_h3: "Research interests",
       about_ri_p:
-        "Metal cutting and machining; CNC programming and toolpath optimization; CAD/CAM; genetic algorithms and intelligent methods for process optimization; surface quality and cutting forces; simulation and layout of production systems; welding and related mechanical topics in collaboration with colleagues.",
+        "Metal cutting and machinability of materials; CNC programming and toolpath optimization; CAD/CAM; optimization of machining parameters using artificial intelligence (genetic algorithms, artificial neural networks, fuzzy logic); surface quality and cutting forces; reverse engineering and product design; flexible manufacturing systems and factory/layout design; deep drawing and sheet-metal forming; hydraulics and pneumatics.",
       about_phil_h3: "Teaching & mentorship philosophy",
       about_phil_p:
         "Bridging academic rigor with shop-floor relevance—students learn methods that mirror how modern factories program, measure, and improve processes. Industry projects and trainer work inform examples used in the classroom.",
@@ -71,6 +75,8 @@
         "Experience converting manual machines to CNC, FMS-style design in Inventor, and continuous professional training with GIZ and KIMERK in metal cutting, plasma, and additive topics.",
       pub_h2: "Publications",
       pub_view_all: "View all publications on Google Scholar →",
+      pub_cross_note:
+        "Cross-disciplinary collaborations (surface-roughness / wear measurement, with University of Prishtina dentistry colleagues):",
       teaching_h2: "Teaching",
       teaching_subjects_h3: "Courses",
       teaching_bachelor_h3: "Bachelor",
@@ -83,12 +89,21 @@
       awards_li1: "Promotion to Associate Professor (2022)",
       awards_li2_dash: "—",
       students_h2: "Students & mentorship",
+      students_intro:
+        "Prof. Gjelaj supervises and mentors BSc, MSc, and PhD students in the Department of Manufacturing and Automation, working closely with teaching assistants and PhD researchers on applied, industry-relevant projects.",
+      students_topics_h3: "Topics for theses & supervision",
+      students_topic1: "CNC programming and toolpath optimization",
+      students_topic2: "CAD/CAM and reverse engineering",
+      students_topic3: "Machining-parameter optimization with AI (genetic algorithms, neural networks, fuzzy logic)",
+      students_topic4: "Factory layout and flexible manufacturing systems (FlexSim)",
+      students_prospective_html:
+        'Prospective students interested in these areas are welcome to <a href="#contact">get in touch</a>.',
       contact_h2: "Contact",
       contact_email_dt: "Email",
       contact_affil_dt: "Affiliation",
       contact_affil_dd: "Faculty of Mechanical Engineering · University of Prishtina · Prishtina, Kosovo",
       contact_dept_dt: "Department",
-      contact_dept_dd: "Production and Automation",
+      contact_dept_dd: "Manufacturing and Automation",
       contact_profiles_dt: "Profiles",
       extras_univ_short: "University of Prishtina",
       footer_text:
@@ -132,22 +147,26 @@
       stat_assoc_prof: "Profesor i asociuar",
       about_h2: "Rreth meje",
       about_edu_h3: "Arsimi",
+      about_edu_bsc_msc_html:
+        '<strong>Bachelor &amp; Master në Inxhinieri Mekanike</strong> — Universiteti i Prishtinës “Hasan Prishtina”, Fakulteti i Inxhinierisë Mekanike (Kosovë).',
       about_edu_li1_html:
-        '<strong>Doktor i shkencave</strong>, Prodhimi dhe Automatizimi — Universiteti i Mariborit, Fakulteti i Inxhinierisë Mekanike (Slloveni). Disertacioni: <em>Automated and Intelligent Programming of CNC Machine Tools</em> (<a href="https://dk.um.si/IzpisGradiva.php?id=46159&amp;lang=eng" target="_blank" rel="noopener noreferrer">repozitori i Universitetit të Mariborit</a>).',
+        '<strong>Doktoraturë (Dr.sc.)</strong>, Prodhimtari &amp; Automatizim — Universiteti i Mariborit, Fakulteti i Inxhinierisë Mekanike (Slloveni), 2014. Disertacioni: <em>Programim i automatizuar dhe inteligjent i makinave CNC</em> (“Samodejno in inteligentno programiranje CNC strojev”); mentor Prof. Jože Balič, komentor Doc. Dr. Mirko Ficko (<a href="https://dk.um.si/IzpisGradiva.php?id=46159&amp;lang=eng" target="_blank" rel="noopener noreferrer">repozitori DKUM</a>).',
       about_edu_li2_html:
         "<strong>Punë praktike master</strong> (2007–2008) — Juraform E.K. Rechberghausen (Gjermani), frezim CNC me Mastercam.",
       about_career_h3: "Karriera",
       career_li1:
         "<strong>Profesor i asociuar</strong> — Universiteti i Prishtinës, Fakulteti i Inxhinierisë Mekanike (shtator 2022–sot).",
       career_li2:
-        "<strong>Profesor asistent</strong> — Departamenti i Prodhimit dhe Automatizimit, i njëjti fakultet (tetor 2017–shtator 2022).",
+        "<strong>Profesor asistent</strong> — Departamenti i Prodhimtarisë dhe Automatizimit, i njëjti fakultet (tetor 2017–shtator 2022).",
+      career_li5:
+        "<strong>Trajner CNC</strong> — GIZ &amp; KIMERK Kosova (2017–sot): tornim, frezim, centra përpunimi, plazmë CNC dhe printim 3D për industrinë metalike.",
       career_li3:
         "<strong>Dizajner Autodesk Inventor</strong> — MTA2 Hebeprofi (mars–gusht 2013): aktivitete FMS, vizatim 2D/3D/montim.",
       career_li4:
         "<strong>Programues CNC</strong> — Kosova Steel (2007–2008): frezim, tokar, centra përpunimi, CNC plazë.",
       about_ri_h3: "Interesat kërkimore",
       about_ri_p:
-        "Prerje dhe përpunim metalash; programim dhe optimizim i trajektorisë së mjetit CNC; CAD/CAM; algoritme gjenetike dhe metoda inteligjente për optimizimin e proceseve; cilësia e sipërfaqes dhe forcat e prerjes; simulim dhe aktivitet i linjave të prodhimit; bashkëpunim në tematika të lidhura me saldimin.",
+        "Përpunimi me prerje dhe përpunueshmëria e materialeve; programimi CNC dhe optimizimi i trajektores së veglës; CAD/CAM; optimizimi i parametrave të përpunimit me inteligjencë artificiale (algoritme gjenetike, rrjeta neurale artificiale, logjikë fuzzy); cilësia e sipërfaqes dhe forcat e prerjes; inxhinieria e kundërt dhe projektimi i produktit; sistemet fleksibile të prodhimit dhe projektimi i fabrikave; tërheqja e thellë dhe formësimi i fletëmetalit; hidraulika dhe pneumatika.",
       about_phil_h3: "Filozofia e mësimdhënies & mentorskës",
       about_phil_p:
         "Lidhja midis rigorozitetit akademik dhe realitetit në hallë—studentët mësojnë metoda që pasqyrojnë mënyrën se si fabrikat moderne programojnë, matin dhe përmirësojnë proceset. Projeket industri dhe roli i trajnerit japin shembuj konkretë në klasë.",
@@ -166,6 +185,8 @@
         "Përvojë në konvertimin e makinave manuale në CNC, dizajn FMS në Inventor dhe trajnim profesional me GIZ dhe KIMERK në prerje metalesh, plazë dhe shtresa.",
       pub_h2: "Publikime",
       pub_view_all: "Shiko të gjitha publikimet në Google Scholar →",
+      pub_cross_note:
+        "Bashkëpunime ndërdisiplinore (matje e ashpërsisë së sipërfaqes / konsumit, me kolegë të stomatologjisë në Universitetin e Prishtinës):",
       teaching_h2: "Mësimdhënia",
       teaching_subjects_h3: "Lëndët",
       teaching_bachelor_h3: "Baçelor",
@@ -178,12 +199,21 @@
       awards_li1: "Ngritje në Profesor të asociuar (2022)",
       awards_li2_dash: "—",
       students_h2: "Studentët & mentorimi",
+      students_intro:
+        "Prof. Gjelaj udhëheq dhe mentoron studentë të nivelit bachelor, master dhe doktoraturë në Departamentin e Prodhimtarisë dhe Automatizimit, duke bashkëpunuar ngushtë me asistentë dhe studentë të doktoraturës në projekte të aplikuara me rëndësi për industrinë.",
+      students_topics_h3: "Tema për punime & mentorim",
+      students_topic1: "Programimi CNC dhe optimizimi i trajektores së veglës",
+      students_topic2: "CAD/CAM dhe inxhinieria e kundërt",
+      students_topic3: "Optimizimi i parametrave të përpunimit me IA (algoritme gjenetike, rrjeta neurale, logjikë fuzzy)",
+      students_topic4: "Projektimi i fabrikave dhe sistemet fleksibile të prodhimit (FlexSim)",
+      students_prospective_html:
+        'Studentët e interesuar për këto fusha janë të mirëpritur të <a href="#contact">kontaktojnë</a>.',
       contact_h2: "Kontakt",
       contact_email_dt: "Email",
       contact_affil_dt: "Afiliacioni",
       contact_affil_dd: "Fakulteti i Inxhinierisë Mekanike · Universiteti i Prishtinës · Prishtinë, Kosovë",
       contact_dept_dt: "Departamenti",
-      contact_dept_dd: "Prodhimi dhe automatizimi",
+      contact_dept_dd: "Prodhimtaria dhe automatizimi",
       contact_profiles_dt: "Profile",
       extras_univ_short: "Universiteti i Prishtinës",
       footer_text:
