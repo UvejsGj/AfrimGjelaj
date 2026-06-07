@@ -30,7 +30,11 @@
         "Industry experience: CNC programming, CAD/CAM, and 40+ applied manufacturing projects (per public profile)",
       highlight_4: "Collaboration with GIZ and KIMERK as a CNC / advanced manufacturing trainer (since 2017)",
       btn_scholar: "Google Scholar",
+      btn_cv: "Download CV",
       btn_contact: "Get in touch",
+      stat_projects: "Applied projects",
+      stat_training_since: "Training since",
+      stat_assoc_prof: "Associate Professor",
       about_h2: "About",
       about_edu_h3: "Education",
       about_edu_li1_html:
@@ -68,12 +72,13 @@
       pub_h2: "Publications",
       pub_view_all: "View all publications on Google Scholar →",
       teaching_h2: "Teaching",
-      teaching_courses_h3: "Courses (examples to verify)",
-      teaching_course_1: "Computer-aided manufacturing / CNC programming",
-      teaching_course_2: "Manufacturing processes and metal cutting",
-      teaching_course_3: "Automation and production systems",
-      teaching_course_4: "CAD/CAM integrated projects",
-      teaching_approach_h3: "Approach",
+      teaching_subjects_h3: "Courses",
+      teaching_bachelor_h3: "Bachelor",
+      teaching_master_h3: "Master",
+      teaching_col_course: "Course",
+      teaching_col_semester: "Semester",
+      teaching_col_year: "Year",
+      teaching_col_link: "Link",
       awards_h2: "Awards & recognition",
       awards_li1: "Promotion to Associate Professor (2022)",
       awards_li2_dash: "—",
@@ -89,7 +94,9 @@
       footer_text:
         '© {{YEAR}} Afrim Gjelaj. Academic profile page',
       aria_menu_open: "Open menu",
-      aria_menu_close: "Close menu"
+      aria_menu_close: "Close menu",
+      aria_theme_dark: "Switch to dark theme",
+      aria_theme_light: "Switch to light theme"
     },
     sq: {
       meta_title: "Afrim Gjelaj | Profesor i asociuar — Universiteti i Prishtinës",
@@ -118,7 +125,11 @@
       highlight_4:
         "Bashkëpunim me GIZ dhe KIMERK si trajner CNC / prodhim i avancuar (që nga 2017)",
       btn_scholar: "Google Scholar",
+      btn_cv: "Shkarko CV",
       btn_contact: "Kontaktoni",
+      stat_projects: "Projekte të aplikuara",
+      stat_training_since: "Trajnim që nga",
+      stat_assoc_prof: "Profesor i asociuar",
       about_h2: "Rreth meje",
       about_edu_h3: "Arsimi",
       about_edu_li1_html:
@@ -156,12 +167,13 @@
       pub_h2: "Publikime",
       pub_view_all: "Shiko të gjitha publikimet në Google Scholar →",
       teaching_h2: "Mësimdhënia",
-      teaching_courses_h3: "Kurset (shembuj për verifikim)",
-      teaching_course_1: "Prodhim i ndihmuar nga kompjuteri / programim CNC",
-      teaching_course_2: "Proceset e prodhimit dhe prerja e metaleve",
-      teaching_course_3: "Automatizim dhe sisteme prodhimi",
-      teaching_course_4: "Projekte të integruara CAD/CAM",
-      teaching_approach_h3: "Qasja",
+      teaching_subjects_h3: "Lëndët",
+      teaching_bachelor_h3: "Baçelor",
+      teaching_master_h3: "Master",
+      teaching_col_course: "Lënda",
+      teaching_col_semester: "Semestri",
+      teaching_col_year: "Viti",
+      teaching_col_link: "Linku",
       awards_h2: "Çmime & njohje",
       awards_li1: "Ngritje në Profesor të asociuar (2022)",
       awards_li2_dash: "—",
@@ -177,7 +189,9 @@
       footer_text:
         '© {{YEAR}} Afrim Gjelaj. Faqe profili akademik',
       aria_menu_open: "Hap menynë",
-      aria_menu_close: "Mbyll menynë"
+      aria_menu_close: "Mbyll menynë",
+      aria_theme_dark: "Kalo në temën e errët",
+      aria_theme_light: "Kalo në temën e ndritshme"
     }
   };
 
@@ -219,6 +233,12 @@
     if (toggle) {
       var open = toggle.getAttribute("aria-expanded") === "true";
       toggle.setAttribute("aria-label", open ? pack.aria_menu_close : pack.aria_menu_open);
+    }
+
+    var themeToggle = document.querySelector(".theme-toggle");
+    if (themeToggle) {
+      var darkOn = document.documentElement.getAttribute("data-theme") === "dark";
+      themeToggle.setAttribute("aria-label", darkOn ? pack.aria_theme_light : pack.aria_theme_dark);
     }
 
     try {

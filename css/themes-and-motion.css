@@ -1,15 +1,5 @@
 /* Motion and responsive/print rules */
 
-.section.is-hidden,
-.hero.is-hidden {
-  display: none;
-}
-
-.card.is-hidden,
-.searchable-list li.is-hidden {
-  display: none;
-}
-
 .reveal-init {
   opacity: 0;
   transform: translateY(22px) scale(0.99);
@@ -134,8 +124,30 @@
 }
 
 @media print {
+  :root,
+  :root[data-theme="dark"] {
+    --bg: #fff;
+    --bg-2: #fff;
+    --surface: #fff;
+    --surface-2: #fff;
+    --card: #fff;
+    --card-soft: #fff;
+    --text: #0f172a;
+    --text-muted: #334155;
+    --text-subtle: #334155;
+    --accent: #0f172a;
+    --accent-2: #334155;
+    --accent-hover: #1e293b;
+    --on-accent: #fff;
+    --border: #ddd;
+    --header-bg: #fff;
+    --progress-track: #fff;
+    --hover-soft: transparent;
+  }
+
   body {
     background: #fff !important;
+    color: var(--text) !important;
   }
 
   .site-header,

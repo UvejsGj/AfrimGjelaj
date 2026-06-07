@@ -8,6 +8,24 @@
     document.body.classList.add("is-low-power");
   }
 
+  // Single rAF-throttled scroll dispatcher shared by all scroll-driven effects.
+  var scrollHandlers = [];
+  var scrollScheduled = false;
+  var raf = window.requestAnimationFrame || function (cb) { return setTimeout(cb, 16); };
+  function runScrollHandlers() {
+    scrollScheduled = false;
+    for (var i = 0; i < scrollHandlers.length; i++) scrollHandlers[i]();
+  }
+  function onScroll() {
+    if (scrollScheduled) return;
+    scrollScheduled = true;
+    raf(runScrollHandlers);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  function addScrollHandler(fn) {
+    scrollHandlers.push(fn);
+  }
+
   function currentLangPack() {
     var lang = document.documentElement.lang === "sq" ? "sq" : "en";
     return window.SiteI18n.M[lang];
@@ -62,6 +80,29 @@
     });
   }
 
+  function setupThemeToggle() {
+    var btn = document.querySelector(".theme-toggle");
+    if (!btn) return;
+    function sync() {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      btn.setAttribute("aria-pressed", dark ? "true" : "false");
+      if (window.SiteI18n) {
+        var pack = currentLangPack();
+        btn.setAttribute("aria-label", dark ? pack.aria_theme_light : pack.aria_theme_dark);
+      }
+    }
+    btn.addEventListener("click", function () {
+      var dark = document.documentElement.getAttribute("data-theme") === "dark";
+      var next = dark ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("afrim-gjelaj-theme", next);
+      } catch (e) {}
+      sync();
+    });
+    sync();
+  }
+
   function setupSceneProgressAndNav() {
     var progress = document.querySelector(".scroll-progress-bar");
     var sections = Array.from(document.querySelectorAll("main section[id]"));
@@ -84,8 +125,14 @@
         var isActive = link.getAttribute("href") === "#" + id;
         link.classList.toggle("is-active", isActive);
         if (isActive && navIndicator) {
-          navIndicator.style.width = link.offsetWidth + "px";
-          navIndicator.style.transform = "translateX(" + link.offsetLeft + "px)";
+          var firstLink = navLinks[0];
+          var wrapped = firstLink && link.offsetTop > firstLink.offsetTop + 2;
+          if (wrapped) {
+            navIndicator.style.width = "0px";
+          } else {
+            navIndicator.style.width = link.offsetWidth + "px";
+            navIndicator.style.transform = "translateX(" + link.offsetLeft + "px)";
+          }
         }
       });
       sections.forEach(function (section, index) {
@@ -112,7 +159,16 @@
       });
     }
 
-    window.addEventListener("scroll", updateProgress, { passive: true });
+    function checkBottomActive() {
+      var doc = document.documentElement;
+      if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) {
+        var last = sections[sections.length - 1];
+        if (last) setActiveNav(last.id);
+      }
+    }
+
+    addScrollHandler(updateProgress);
+    addScrollHandler(checkBottomActive);
     window.addEventListener("resize", function () {
       var current = document.querySelector(".nav-list a.is-active");
       if (current && navIndicator) {
@@ -173,16 +229,12 @@
     var text = document.querySelector(".hero-text");
     if (!hero || !photo || !text) return;
 
-    window.addEventListener(
-      "scroll",
-      function () {
-        var rect = hero.getBoundingClientRect();
-        var ratio = Math.max(-1, Math.min(1, rect.top / window.innerHeight));
-        photo.style.transform = "translateY(" + ratio * -14 + "px)";
-        text.style.transform = "translateY(" + ratio * 8 + "px)";
-      },
-      { passive: true }
-    );
+    addScrollHandler(function () {
+      var rect = hero.getBoundingClientRect();
+      var ratio = Math.max(-1, Math.min(1, rect.top / window.innerHeight));
+      photo.style.transform = "translateY(" + ratio * -14 + "px)";
+      text.style.transform = "translateY(" + ratio * 8 + "px)";
+    });
   }
 
   function setupCardTilt() {
@@ -296,6 +348,7 @@
     });
   }
 
+  setupThemeToggle();
   setupSceneProgressAndNav();
   setupRevealAnimations();
   setupHeroParallax();

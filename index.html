@@ -4,11 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Afrim Gjelaj — Associate Professor, University of Prishtina. Manufacturing automation, CNC programming, and machining research." />
+  <meta name="author" content="Afrim Gjelaj" />
+  <meta name="theme-color" content="#0f172a" />
   <title>Afrim Gjelaj | Associate Professor — University of Prishtina</title>
+
+  <!-- Set theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("afrim-gjelaj-theme");
+        if (t !== "dark" && t !== "light") {
+          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="images/profile.jpg" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Afrim Gjelaj | Associate Professor — University of Prishtina" />
+  <meta property="og:description" content="Manufacturing automation, CNC programming, and machining research at the University of Prishtina." />
+  <meta property="og:image" content="images/profile.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="sq_AL" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Afrim Gjelaj | Associate Professor — University of Prishtina" />
+  <meta name="twitter:description" content="Manufacturing automation, CNC programming, and machining research at the University of Prishtina." />
+  <meta name="twitter:image" content="images/profile.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Afrim Gjelaj",
+    "jobTitle": "Associate Professor",
+    "description": "Associate Professor at the University of Prishtina — manufacturing automation, CNC programming, and machining research.",
+    "image": "images/profile.jpg",
+    "email": "mailto:afrim.gjelaj@uni-pr.edu",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Prishtina, Faculty of Mechanical Engineering"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Maribor, Faculty of Mechanical Engineering"
+    },
+    "knowsAbout": ["CNC programming", "Metal cutting", "CAD/CAM", "Manufacturing automation", "Process optimization"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=kkLyTTYAAAAJ&hl=en",
+      "https://www.linkedin.com/in/afrim-gjelaj-52365836",
+      "https://independent.academia.edu/AfrimGjelaj"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip_link">Skip to content</a>
@@ -23,6 +81,15 @@
         <button type="button" class="lang-btn is-active" data-set-lang="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-btn" data-set-lang="sq" aria-pressed="false">SQ</button>
       </div>
+      <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme" title="Theme">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path class="icon-moon" d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+          <g class="icon-sun">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4" />
+          </g>
+        </svg>
+      </button>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -44,7 +111,7 @@
   </header>
 
   <main id="main">
-    <section id="overview" class="hero section scene scene-hero" data-mood="hero" data-search="homepage overview name affiliation bio përmbledhje profili">
+    <section id="overview" class="hero section scene scene-hero" data-mood="hero">
       <div class="hero-grid">
         <div class="hero-photo-wrap">
           <!-- Portrait: default SVG; optional high-res JPEG at images/profile.jpg (update src). PLACEHOLDER; per tu mbushur -->
@@ -76,39 +143,40 @@
           <div class="hero-stats" aria-label="Key impact indicators">
             <div class="hero-stat">
               <strong data-count-to="40">0</strong>
-              <span>Applied projects</span>
+              <span data-i18n="stat_projects">Applied projects</span>
             </div>
             <div class="hero-stat">
-              <strong data-count-to="2017">0</strong>
-              <span>Training since</span>
+              <strong>2017</strong>
+              <span data-i18n="stat_training_since">Training since</span>
             </div>
             <div class="hero-stat">
-              <strong data-count-to="2022">0</strong>
-              <span>Associate Professor</span>
+              <strong>2022</strong>
+              <span data-i18n="stat_assoc_prof">Associate Professor</span>
             </div>
           </div>
           <p class="hero-actions">
             <a class="btn btn-primary" href="https://scholar.google.com/citations?user=kkLyTTYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" data-i18n="btn_scholar">Google Scholar</a>
+            <a class="btn btn-secondary" href="files/CV-Afrim-Gjelaj.pdf" download data-i18n="btn_cv">Download CV</a>
             <a class="btn btn-secondary" href="#contact" data-i18n="btn_contact">Get in touch</a>
           </p>
         </div>
       </div>
     </section>
 
-    <section id="about" class="section section-alt scene" data-mood="about" data-search="about biography education career maribor prishtina degrees philosophy rreth">
+    <section id="about" class="section section-alt scene" data-mood="about">
       <div class="container narrow">
         <h2 data-i18n="about_h2">About</h2>
         <h3 data-i18n="about_edu_h3">Education</h3>
         <ul class="timeline">
-          <li data-i18n-html="about_edu_li1_html"></li>
-          <li data-i18n-html="about_edu_li2_html"></li>
+          <li data-i18n-html="about_edu_li1_html"><strong>Doctor of Science</strong>, Manufacturing and Automation — University of Maribor, Faculty of Mechanical Engineering (Slovenia). Dissertation: <em>Automated and Intelligent Programming of CNC Machine Tools</em> (<a href="https://dk.um.si/IzpisGradiva.php?id=46159&amp;lang=eng" target="_blank" rel="noopener noreferrer">University of Maribor repository</a>).</li>
+          <li data-i18n-html="about_edu_li2_html"><strong>Master’s practical work</strong> (2007–2008) — Juraform E.K. Rechberghausen (Germany), CNC milling using Mastercam.</li>
         </ul>
         <h3 data-i18n="about_career_h3">Career</h3>
         <ul class="timeline">
-          <li data-i18n-html="career_li1"></li>
-          <li data-i18n-html="career_li2"></li>
-          <li data-i18n-html="career_li3"></li>
-          <li data-i18n-html="career_li4"></li>
+          <li data-i18n-html="career_li1"><strong>Associate Professor</strong> — University of Prishtina, Faculty of Mechanical Engineering (September 2022–present).</li>
+          <li data-i18n-html="career_li2"><strong>Assistant Professor</strong> — Department of Production and Automation, same faculty (October 2017–September 2022).</li>
+          <li data-i18n-html="career_li3"><strong>Autodesk Inventor designer</strong> — MTA2 Hebeprofi (March–August 2013): FMS-style layouts, 2D/3D/assembly design.</li>
+          <li data-i18n-html="career_li4"><strong>CNC programmer</strong> — Kosova Steel (2007–2008): milling, lathe, machining centers, CNC plasma.</li>
         </ul>
         <h3 data-i18n="about_ri_h3">Research interests</h3>
         <p data-i18n="about_ri_p">
@@ -121,23 +189,23 @@
       </div>
     </section>
 
-    <section id="research" class="section scene" data-mood="research" data-search="research projects grants collaboration industry flexsim cnc kërkim projekt">
+    <section id="research" class="section scene" data-mood="research">
       <div class="container">
         <h2 data-i18n="research_h2">Research &amp; projects</h2>
         <div class="card-grid">
-          <article class="card searchable-card">
+          <article class="card">
             <h3 data-i18n="research_card1_h3">Intelligent CNC &amp; toolpath optimization</h3>
             <p data-i18n="research_card1_p">Tool selection, genetic algorithms for cutting conditions, and time-efficient machining—including collaborative work on machine performance and magazine/tool positioning.</p>
           </article>
-          <article class="card searchable-card">
+          <article class="card">
             <h3 data-i18n="research_card2_h3">Process modeling &amp; quality</h3>
             <p data-i18n="research_card2_p">Milling surface roughness, cutting force optimization, and experimental approaches using computational intelligence.</p>
           </article>
-          <article class="card searchable-card">
+          <article class="card">
             <h3 data-i18n="research_card3_h3">Systems &amp; equipment design</h3>
             <p data-i18n="research_card3_p">Modular CNC design, welding robot layout for aluminium frames, production-line layout using FlexSim, and vehicle suspension design (collaborative).</p>
           </article>
-          <article class="card searchable-card">
+          <article class="card">
             <h3 data-i18n="research_card4_h3">Industry &amp; training impact</h3>
             <p data-i18n="research_card4_p">Experience converting manual machines to CNC, FMS-style design in Inventor, and continuous professional training with GIZ and KIMERK in metal cutting, plasma, and additive topics.</p>
           </article>
@@ -145,10 +213,10 @@
       </div>
     </section>
 
-    <section id="publications" class="section section-alt scene" data-mood="publications" data-search="publications papers journal scholar doi thesis machines famena publikime">
+    <section id="publications" class="section section-alt scene" data-mood="publications">
       <div class="container">
         <h2 data-i18n="pub_h2">Publications</h2>
-        <ul class="pub-list searchable-list">
+        <ul class="pub-list">
           <li>
             A. Pajaziti, O. Tafilaj, <strong>A. Gjelaj</strong>, B. Berisha. “Optimization of toolpath planning and CNC machine performance in time-efficient machining.” <em>Machines</em> 13:1, 2025.
           </li>
@@ -175,20 +243,20 @@
       </div>
     </section>
 
-    <section id="teaching" class="section scene" data-mood="teaching" data-search="teaching courses syllabus automation manufacturing prishtina mësimdhënie">
+    <section id="teaching" class="section scene" data-mood="teaching">
       <div class="container narrow">
         <h2 data-i18n="teaching_h2">Teaching</h2>
-        <h3>LËNDËT</h3>
+        <h3 data-i18n="teaching_subjects_h3">Courses</h3>
 
-        <h3>Baçelor</h3>
+        <h3 data-i18n="teaching_bachelor_h3">Bachelor</h3>
         <div class="subjects-table-wrap">
           <table class="subjects-table">
             <thead>
               <tr>
-                <th>Lenda</th>
-                <th>Semestri</th>
-                <th>Viti</th>
-                <th>Linku</th>
+                <th data-i18n="teaching_col_course">Course</th>
+                <th data-i18n="teaching_col_semester">Semester</th>
+                <th data-i18n="teaching_col_year">Year</th>
+                <th data-i18n="teaching_col_link">Link</th>
               </tr>
             </thead>
             <tbody>
@@ -196,7 +264,6 @@
               <tr><td>Bazat e metrologjisë</td><td></td><td></td><td></td></tr>
               <tr><td>CAD dhe modelim i produktit</td><td></td><td></td><td></td></tr>
               <tr><td>CAD/CAM</td><td></td><td></td><td></td></tr>
-              <tr><td>Fonderitë</td><td></td><td></td><td></td></tr>
               <tr><td>Fonderitë</td><td></td><td></td><td></td></tr>
               <tr><td>Makinat CNC</td><td></td><td></td><td></td></tr>
               <tr><td>Makinat për përpunimin e materialeve polimere</td><td></td><td></td><td></td></tr>
@@ -211,15 +278,15 @@
           </table>
         </div>
 
-        <h3>Master</h3>
+        <h3 data-i18n="teaching_master_h3">Master</h3>
         <div class="subjects-table-wrap">
           <table class="subjects-table">
             <thead>
               <tr>
-                <th>Lenda</th>
-                <th>Semestri</th>
-                <th>Viti</th>
-                <th>Linku</th>
+                <th data-i18n="teaching_col_course">Course</th>
+                <th data-i18n="teaching_col_semester">Semester</th>
+                <th data-i18n="teaching_col_year">Year</th>
+                <th data-i18n="teaching_col_link">Link</th>
               </tr>
             </thead>
             <tbody>
@@ -231,11 +298,10 @@
             </tbody>
           </table>
         </div>
-        <h3 data-i18n="teaching_approach_h3">Approach</h3>
       </div>
     </section>
 
-    <section id="awards" class="section section-alt scene" data-mood="awards" data-search="awards recognition fellowships honors çmime">
+    <section id="awards" class="section section-alt scene" data-mood="awards">
       <div class="container narrow">
         <h2 data-i18n="awards_h2">Awards &amp; recognition</h2>
         <ul class="muted-list">
@@ -246,20 +312,20 @@
       </div>
     </section>
 
-    <section id="students" class="section scene" data-mood="students" data-search="students mentorship phd masters thesis alumni prospective studentë">
+    <section id="students" class="section scene" data-mood="students">
       <div class="container narrow">
         <h2 data-i18n="students_h2">Students &amp; mentorship</h2>
       </div>
     </section>
 
 
-    <section id="contact" class="section section-alt scene" data-mood="contact" data-search="contact email office hours linkedin scholar academia kontakt">
+    <section id="contact" class="section section-alt scene" data-mood="contact">
       <div class="container narrow">
         <h2 data-i18n="contact_h2">Contact</h2>
         <dl class="contact-dl">
           <dt data-i18n="contact_email_dt">Email</dt>
           <dd>
-            <a href="mailto:firstname.lastname@uni-pr.edu">firstname.lastname@uni-pr.edu</a>
+            <a href="mailto:afrim.gjelaj@uni-pr.edu">afrim.gjelaj@uni-pr.edu</a>
           </dd>
           <dt data-i18n="contact_affil_dt">Affiliation</dt>
           <dd data-i18n="contact_affil_dd">Faculty of Mechanical Engineering · University of Prishtina · Prishtina, Kosovo</dd>
@@ -282,7 +348,7 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p data-i18n-footer></p>
+      <p data-i18n-footer>© Afrim Gjelaj · Academic profile page</p>
     </div>
   </footer>
 
