@@ -108,6 +108,18 @@
       extras_univ_short: "University of Prishtina",
       footer_text:
         '© {{YEAR}} Afrim Gjelaj. Academic profile page',
+      dots_aria: "Sections",
+      cmdk_open: "Search (Ctrl+K)",
+      cmdk_placeholder: "Jump to a section or publication…",
+      cmdk_empty: "No matches",
+      cmdk_section: "Section",
+      cmdk_pub: "Publication",
+      filter_aria: "Filter publications by topic",
+      filter_all: "All",
+      filter_cnc: "CNC",
+      filter_ai: "AI & optimization",
+      filter_cadcam: "CAD/CAM & systems",
+      filter_cross: "Cross-disciplinary",
       aria_menu_open: "Open menu",
       aria_menu_close: "Close menu",
       aria_theme_dark: "Switch to dark theme",
@@ -218,6 +230,18 @@
       extras_univ_short: "Universiteti i Prishtinës",
       footer_text:
         '© {{YEAR}} Afrim Gjelaj. Faqe profili akademik',
+      dots_aria: "Seksionet",
+      cmdk_open: "Kërko (Ctrl+K)",
+      cmdk_placeholder: "Kalo te një seksion ose publikim…",
+      cmdk_empty: "Asnjë përputhje",
+      cmdk_section: "Seksion",
+      cmdk_pub: "Publikim",
+      filter_aria: "Filtro publikimet sipas temës",
+      filter_all: "Të gjitha",
+      filter_cnc: "CNC",
+      filter_ai: "IA & optimizim",
+      filter_cadcam: "CAD/CAM & sisteme",
+      filter_cross: "Ndërdisiplinore",
       aria_menu_open: "Hap menynë",
       aria_menu_close: "Mbyll menynë",
       aria_theme_dark: "Kalo në temën e errët",
@@ -280,6 +304,10 @@
       btn.classList.toggle("is-active", isThis);
       btn.setAttribute("aria-pressed", isThis ? "true" : "false");
     });
+
+    try {
+      document.dispatchEvent(new CustomEvent("i18n:changed", { detail: { lang: lang } }));
+    } catch (e) {}
   }
 
   function getStoredLang() {

@@ -1,9 +1,53 @@
-/* About — education & career timeline */
+/* About — education & career timeline (vertical connector that draws on scroll) */
 
 .timeline {
-  padding-left: 1.2rem;
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+/* Static track */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.45em;
+  bottom: 0.45em;
+  width: 2px;
+  background: var(--border);
+}
+
+/* Animated progress line — draws as the list enters view (only when .fx) */
+.fx .timeline::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.45em;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(var(--accent-2), var(--decor-1));
+  transition: height 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fx .timeline.is-drawn::after {
+  height: calc(100% - 0.9em);
 }
 
 .timeline li {
-  margin-bottom: 0.65rem;
+  position: relative;
+  margin-bottom: 0.8rem;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0.45em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--decor-1);
+  box-sizing: border-box;
 }

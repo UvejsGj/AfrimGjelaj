@@ -8,8 +8,75 @@
   margin-bottom: 0.65rem;
   padding: 0.2rem 0.2rem 0.3rem 0.25rem;
   border-bottom: 1px solid var(--border);
-  transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
   border-radius: 8px;
+  max-height: 30rem;
+  overflow: hidden;
+  transition: opacity 0.25s ease, transform 0.2s ease, background-color 0.2s ease,
+    max-height 0.35s ease, margin 0.35s ease, padding 0.35s ease;
+}
+
+/* Topic filter chips */
+.pub-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.1rem;
+}
+
+.pub-chip {
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.32rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+}
+
+.pub-chip:hover {
+  color: var(--text);
+}
+
+.pub-chip.is-active {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+.pub-chip:focus-visible {
+  outline: 2px solid var(--decor-1);
+  outline-offset: 2px;
+}
+
+/* Smooth collapse when filtered out */
+.pub-list li.is-filtered-out {
+  max-height: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  border-bottom-color: transparent;
+  pointer-events: none;
+}
+
+/* Highlight when jumped to from the command palette */
+.pub-list li.cmdk-target {
+  animation: cmdk-pulse 1.8s ease;
+}
+
+@keyframes cmdk-pulse {
+  0%,
+  100% {
+    background: transparent;
+  }
+  15%,
+  60% {
+    background: var(--hover-soft);
+  }
 }
 
 .pub-list li:last-child {

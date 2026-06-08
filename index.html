@@ -123,6 +123,9 @@
 
   <main id="main">
     <section id="overview" class="hero section scene scene-hero" data-mood="hero">
+      <svg class="toolpath toolpath--hero" viewBox="0 0 600 420" preserveAspectRatio="xMidYMid slice" fill="none" aria-hidden="true">
+        <path class="toolpath-line" pathLength="1" d="M60 70 H540 V120 H100 V170 H540 V220 H100 V270 H540 V320 H100 V360 H430" />
+      </svg>
       <div class="hero-grid">
         <div class="hero-photo-wrap">
           <!-- Portrait: default SVG; optional high-res JPEG at images/profile.jpg (update src). PLACEHOLDER; per tu mbushur -->
@@ -230,38 +233,38 @@
       <div class="container">
         <h2 data-i18n="pub_h2">Publications</h2>
         <ul class="pub-list">
-          <li>
+          <li data-topic="cnc ai">
             <strong>A. Gjelaj</strong>. <em>Intelligent CNC Programming of Machine Tools: Artificial Techniques.</em> LAP Lambert Academic Publishing, 2016. ISBN 978-3-659-88662-1.
           </li>
-          <li>
+          <li data-topic="cnc ai">
             A. Pajaziti, O. Tafilaj, <strong>A. Gjelaj</strong>, B. Berisha. “Optimization of toolpath planning and CNC machine performance in time-efficient machining.” <em>Machines</em> 13(1):65, 2025. DOI: <a href="https://doi.org/10.3390/machines13010065" target="_blank" rel="noopener noreferrer">10.3390/machines13010065</a>.
           </li>
-          <li>
+          <li data-topic="cnc ai">
             A. Pajaziti, O. Tafilaj, E. Hasanaj, <strong>A. Gjelaj</strong>. “Optimization of CNC working time depending on the positioning of the tools in the magazine.” <em>Machines</em> 12(8):512, 2024. DOI: <a href="https://doi.org/10.3390/machines12080512" target="_blank" rel="noopener noreferrer">10.3390/machines12080512</a>.
           </li>
-          <li>
+          <li data-topic="ai">
             <strong>A. Gjelaj</strong>, B. Berisha, W. Sitek. “An experimental based approach using artificial intelligence algorithm for determining the surface roughness by milling process.” <em>Int. Transaction Journal of Engineering, Management &amp; Applied Sciences &amp; Technologies</em> 13(5), 2022. DOI: <a href="https://doi.org/10.14456/ITJEMAST.2022.86" target="_blank" rel="noopener noreferrer">10.14456/ITJEMAST.2022.86</a>.
           </li>
-          <li>
+          <li data-topic="ai cnc">
             <strong>A. Gjelaj</strong>, B. Berisha, F. Smaili. “Optimization of turning process and cutting force using multiobjective genetic algorithm.” <em>Universal Journal of Mechanical Engineering</em> 7(2):64–70, 2019.
           </li>
-          <li>
+          <li data-topic="cnc cadcam">
             <strong>A. Gjelaj</strong>, J. Balič, M. Ficko. “Intelligent optimal tool selections for CNC programming of machine tools.” <em>Transactions of FAMENA</em> 37(3):31–40, 2013.
           </li>
-          <li>
+          <li data-topic="cadcam">
             A. Pajaziti, K. Stuja, <strong>A. Gjelaj</strong>, L. Calvin. “Design and optimization of the welding robot system for aluminium frames using simulation software.” <em>Annals of DAAAM &amp; Proceedings</em> 34, 2023.
           </li>
-          <li>
+          <li data-topic="cadcam">
             F. Smaili, H. Ibishi, X. Mehmeti, <strong>A. Gjelaj</strong>. “Utilization of FlexSim software to identify the suitable layout planning of a production line.” <em>UBT International Conference</em>, 2020.
           </li>
-          <li>
+          <li data-topic="cnc ai">
             <strong>A. Gjelaj</strong>, J. Balič. “Optimization of cutting tool path generation using genetic algorithm.” <em>DAAAM Proceedings</em>, 2011.
           </li>
-          <li class="pub-note" data-i18n="pub_cross_note">Cross-disciplinary collaborations (surface-roughness / wear measurement, with University of Prishtina dentistry colleagues):</li>
-          <li>
+          <li class="pub-note" data-topic="cross" data-i18n="pub_cross_note">Cross-disciplinary collaborations (surface-roughness / wear measurement, with University of Prishtina dentistry colleagues):</li>
+          <li data-topic="cross">
             B. Salihu, M. Stavileci, T. Pustina, X. Bajrami, <strong>A. Gjelaj</strong>, F. Rrustemaj, J. Véronneau. “Zirconium particles in toothpaste: a novel approach to whitening and its impact on enamel wear.” <em>BMC Oral Health</em>, 2025. DOI: <a href="https://doi.org/10.1186/s12903-025-07242-1" target="_blank" rel="noopener noreferrer">10.1186/s12903-025-07242-1</a>.
           </li>
-          <li>
+          <li data-topic="cross">
             M. Stavileci, T. Pustina, B. Salihu, J. Véronneau, X. Bajrami, <strong>A. Gjelaj</strong>. “In vitro evaluation of the abrasive capacity of zirconia whitening toothpaste on radicular dentin.” <em>Heliyon</em>, 2025. DOI: <a href="https://doi.org/10.1016/j.heliyon.2025.e41867" target="_blank" rel="noopener noreferrer">10.1016/j.heliyon.2025.e41867</a>.
           </li>
         </ul>
@@ -392,5 +395,6 @@
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/immersive.js"></script>
 </body>
 </html>
