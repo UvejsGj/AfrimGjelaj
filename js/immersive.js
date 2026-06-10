@@ -332,19 +332,19 @@
     var overlay = document.createElement("div");
     overlay.className = "cmdk";
     overlay.hidden = true;
+    // Static structure only — no interpolated values in the HTML string.
+    // Localized text is applied via DOM APIs below so a translation string can
+    // never be parsed as HTML (defense-in-depth against markup injection).
     overlay.innerHTML =
       '<div class="cmdk-backdrop" data-cmdk-close></div>' +
-      '<div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="' +
-      t("cmdk_open", "Search") +
-      '">' +
-      '<input class="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-results" aria-autocomplete="list" autocomplete="off" spellcheck="false" placeholder="' +
-      t("cmdk_placeholder", "Jump to a section or publication…") +
-      '" />' +
+      '<div class="cmdk-panel" role="dialog" aria-modal="true">' +
+      '<input class="cmdk-input" type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-results" aria-autocomplete="list" autocomplete="off" spellcheck="false" />' +
       '<ul class="cmdk-results" id="cmdk-results" role="listbox"></ul>' +
-      '<div class="cmdk-empty" hidden>' +
-      t("cmdk_empty", "No matches") +
-      "</div>" +
+      '<div class="cmdk-empty" hidden></div>' +
       "</div>";
+    overlay.querySelector(".cmdk-panel").setAttribute("aria-label", t("cmdk_open", "Search"));
+    overlay.querySelector(".cmdk-input").setAttribute("placeholder", t("cmdk_placeholder", "Jump to a section or publication…"));
+    overlay.querySelector(".cmdk-empty").textContent = t("cmdk_empty", "No matches");
     document.body.appendChild(overlay);
 
     var input = overlay.querySelector(".cmdk-input");
@@ -404,9 +404,14 @@
         li.id = "cmdk-opt-" + i;
         li.setAttribute("role", "option");
         li.setAttribute("aria-selected", i === 0 ? "true" : "false");
-        li.innerHTML =
-          '<span class="cmdk-item-label"></span><span class="cmdk-item-kind">' + r.sub + "</span>";
-        li.querySelector(".cmdk-item-label").textContent = r.label;
+        var labelSpan = document.createElement("span");
+        labelSpan.className = "cmdk-item-label";
+        labelSpan.textContent = r.label;
+        var kindSpan = document.createElement("span");
+        kindSpan.className = "cmdk-item-kind";
+        kindSpan.textContent = r.sub;
+        li.appendChild(labelSpan);
+        li.appendChild(kindSpan);
         li.addEventListener("mousemove", function () {
           setActive(i);
         });

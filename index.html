@@ -8,18 +8,8 @@
   <meta name="theme-color" content="#0f172a" />
   <title>Afrim Gjelaj | Associate Professor — University of Prishtina</title>
 
-  <!-- Set theme before first paint to avoid a flash -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("afrim-gjelaj-theme");
-        if (t !== "dark" && t !== "light") {
-          t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        }
-        document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    })();
-  </script>
+  <!-- Set theme before first paint to avoid a flash (external file so the site can ship a strict CSP) -->
+  <script src="js/theme-init.js"></script>
 
   <!-- Favicon -->
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
