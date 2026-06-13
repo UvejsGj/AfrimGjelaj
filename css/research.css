@@ -1,26 +1,62 @@
-/* Research & projects — card grid */
+/* Research — editorial: one lead theme + numbered supporting themes (no equal cards) */
 
-.card-grid {
+.rgrid {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2.4rem 2.6rem;
+  margin-top: 1.9rem;
+  align-items: start;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.2rem 1.25rem;
-  box-shadow: var(--shadow-sm);
-  transform-style: preserve-3d;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+.lead-theme {
+  grid-row: 1 / span 2;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
 }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+.lead-theme h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.8rem;
 }
 
-.card h3 {
-  margin-top: 0;
+.lead-theme p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 34ch;
+}
+
+.rtheme-n {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--decor-1);
+  margin-bottom: 0.5rem;
+}
+
+.rtheme h3 {
+  font-size: 1.02rem;
+  margin: 0 0 0.4rem;
+}
+
+.rtheme p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .rgrid {
+    grid-template-columns: 1fr;
+    gap: 1.7rem;
+  }
+
+  .lead-theme {
+    grid-row: auto;
+  }
 }

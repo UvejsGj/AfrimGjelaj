@@ -35,6 +35,10 @@
       stat_projects: "Applied projects",
       stat_training_since: "Training since",
       stat_assoc_prof: "Associate Professor",
+      meta_1_html: "<b>PhD</b> — University of Maribor, 2014",
+      meta_2_html: "<b>Associate Professor</b> since 2022",
+      meta_3_html: "<b>15+</b> peer-reviewed papers",
+      meta_4_html: "<b>40+</b> industrial projects",
       about_h2: "About",
       about_edu_h3: "Education",
       about_edu_bsc_msc_html:
@@ -157,6 +161,10 @@
       stat_projects: "Projekte të aplikuara",
       stat_training_since: "Trajnim që nga",
       stat_assoc_prof: "Profesor i asociuar",
+      meta_1_html: "<b>Doktoraturë</b> — Universiteti i Mariborit, 2014",
+      meta_2_html: "<b>Profesor i asociuar</b> që nga 2022",
+      meta_3_html: "<b>15+</b> punime me recension",
+      meta_4_html: "<b>40+</b> projekte industriale",
       about_h2: "Rreth meje",
       about_edu_h3: "Arsimi",
       about_edu_bsc_msc_html:

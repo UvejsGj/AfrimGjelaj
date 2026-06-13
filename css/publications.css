@@ -1,18 +1,92 @@
-/* Publications list */
+/* Publications — year-rail list with marquee items + topic filter */
 
 .pub-list {
-  padding-left: 1.2rem;
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
 }
 
 .pub-list li {
-  margin-bottom: 0.65rem;
-  padding: 0.2rem 0.2rem 0.3rem 0.25rem;
-  border-bottom: 1px solid var(--border);
-  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 3.25rem 1fr;
+  column-gap: 1.4rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
   max-height: 30rem;
   overflow: hidden;
-  transition: opacity 0.25s ease, transform 0.2s ease, background-color 0.2s ease,
-    max-height 0.35s ease, margin 0.35s ease, padding 0.35s ease;
+  transition: opacity 0.25s ease, background-color 0.2s ease, max-height 0.35s ease,
+    padding 0.35s ease;
+}
+
+.pub-list li:first-child {
+  border-top: none;
+}
+
+.pub-year {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+
+.pub-body {
+  font-size: 0.97rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.pub-body em {
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.pub-body a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--decor-1);
+}
+
+/* Marquee items get serif weight + scale */
+.pub-marquee .pub-body {
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+}
+
+.pub-marquee .pub-body em {
+  font-size: 0.9em;
+}
+
+/* Hover/focus dimming (driven by the existing JS) */
+.pub-list.has-focus-item li {
+  opacity: 0.4;
+}
+
+.pub-list.has-focus-item li.is-focus-item {
+  opacity: 1;
+}
+
+/* Cross-disciplinary label spans the full width */
+.pub-list li.pub-note {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 0 0 0.2rem;
+  border-top: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Filtered out — smooth collapse */
+.pub-list li.is-filtered-out {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  border-top-color: transparent;
+  pointer-events: none;
 }
 
 /* Topic filter chips */
@@ -20,7 +94,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.4rem;
 }
 
 .pub-chip {
@@ -51,19 +125,7 @@
   outline-offset: 2px;
 }
 
-/* Smooth collapse when filtered out */
-.pub-list li.is-filtered-out {
-  max-height: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  opacity: 0;
-  border-bottom-color: transparent;
-  pointer-events: none;
-}
-
-/* Highlight when jumped to from the command palette */
+/* Command-palette jump highlight */
 .pub-list li.cmdk-target {
   animation: cmdk-pulse 1.8s ease;
 }
@@ -77,29 +139,4 @@
   60% {
     background: var(--hover-soft);
   }
-}
-
-.pub-list li:last-child {
-  border-bottom: none;
-}
-
-.pub-list.has-focus-item li {
-  opacity: 0.38;
-}
-
-.pub-list.has-focus-item li.is-focus-item {
-  opacity: 1;
-  transform: translateX(5px);
-  background: var(--hover-soft);
-}
-
-.pub-list li.pub-note {
-  list-style: none;
-  margin-left: -1.2rem;
-  margin-top: 0.7rem;
-  padding-left: 0;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  border-bottom: none;
 }

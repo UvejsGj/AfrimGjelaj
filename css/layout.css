@@ -1,7 +1,7 @@
 /* Section scaffolding, ambient scene backdrops, and shared utilities */
 
 .section {
-  padding: 3rem 1.25rem;
+  padding: clamp(3.25rem, 5vw, 5rem) 1.25rem;
   scroll-margin-top: 7rem;
   position: relative;
   overflow: clip;
