@@ -1,3 +1,18 @@
-/* Students & mentorship.
-   This section currently relies on shared primitives — base typography and the
-   .muted-list utility (see layout.css). Add section-specific styles here as it grows. */
+/* Students & mentorship — topics as a clean accented list */
+
+#students .muted-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.55rem 1.6rem;
+}
+
+#students .muted-list li {
+  padding: 0.5rem 0 0.5rem 1.1rem;
+  border-left: 2px solid var(--decor-2);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.45;
+}

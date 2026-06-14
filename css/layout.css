@@ -78,3 +78,16 @@
 .text-link {
   font-weight: 700;
 }
+
+/* Quiet tracked sub-labels for the reference sections (editorial rhythm) */
+#about h3,
+#teaching h3,
+#students h3 {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-subtle);
+  margin: 2.2rem 0 0.9rem;
+}

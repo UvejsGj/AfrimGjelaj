@@ -1,27 +1,35 @@
-/* Teaching — subject tables */
+/* Teaching — open subject tables (de-boxed) */
 
 .subjects-table-wrap {
   width: 100%;
   overflow-x: auto;
-  margin: 0 0 1rem;
+  margin: 0.4rem 0 2.2rem;
 }
 
 .subjects-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
 }
 
 .subjects-table th,
 .subjects-table td {
   text-align: left;
-  padding: 0.55rem 0.7rem;
+  padding: 0.62rem 0.9rem 0.62rem 0;
   border-bottom: 1px solid var(--border);
   vertical-align: top;
+}
+
+.subjects-table th {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  font-weight: 700;
+}
+
+.subjects-table td {
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
 .subjects-table tbody tr {
@@ -40,14 +48,6 @@
 .subjects-table tbody tr.row-in {
   opacity: 1;
   transform: translateY(0);
-}
-
-.subjects-table th {
-  font-size: 0.84rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  background: var(--surface-2);
 }
 
 .subjects-table tr:last-child td {

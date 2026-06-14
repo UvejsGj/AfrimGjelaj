@@ -1,29 +1,26 @@
-/* Contact — details list and profile links */
+/* Contact — open label/value grid (de-boxed) + profile links */
 
 .contact-dl {
-  margin: 0;
-  background: var(--surface);
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: none;
-  padding: 1rem 1.1rem 1.15rem;
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.1rem 1.6rem;
+  margin: 1.6rem 0 0;
 }
 
 .contact-dl dt {
-  font-weight: 700;
-  margin-top: 1rem;
-  font-size: 0.84rem;
+  margin: 0;
+  font-size: 0.74rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-}
-
-.contact-dl dt:first-child {
-  margin-top: 0;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: var(--text-subtle);
+  padding-top: 0.2rem;
 }
 
 .contact-dl dd {
-  margin: 0.3rem 0 0;
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
 }
 
 .inline-links {
@@ -32,19 +29,35 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem 0.75rem;
+  gap: 0.45rem 0.7rem;
 }
 
 .inline-links a {
   display: inline-block;
-  padding: 0.3rem 0.62rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 999px;
   background: var(--surface-2);
   border: 1px solid var(--border);
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.88rem;
 }
 
 .inline-links a:hover {
   background: var(--border);
+}
+
+@media (max-width: 560px) {
+  .contact-dl {
+    grid-template-columns: 1fr;
+    gap: 0.3rem 0;
+  }
+
+  .contact-dl dt {
+    margin-top: 1rem;
+  }
+
+  .contact-dl dd {
+    margin-bottom: 0.2rem;
+  }
 }
