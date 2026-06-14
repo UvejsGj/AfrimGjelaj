@@ -201,15 +201,29 @@
       }
     }
 
-    addScrollHandler(updateProgress);
-    addScrollHandler(checkBottomActive);
-    window.addEventListener("resize", function () {
+    function positionIndicator() {
       var current = document.querySelector(".nav-list a.is-active");
-      if (current && navIndicator) {
+      if (!current || !navIndicator) return;
+      var firstLink = navLinks[0];
+      var wrapped = firstLink && current.offsetTop > firstLink.offsetTop + 2;
+      if (wrapped) {
+        navIndicator.style.width = "0px";
+      } else {
         navIndicator.style.width = current.offsetWidth + "px";
         navIndicator.style.transform = "translateX(" + current.offsetLeft + "px)";
       }
+    }
+
+    addScrollHandler(updateProgress);
+    addScrollHandler(checkBottomActive);
+    window.addEventListener("resize", function () {
+      positionIndicator();
       updateProgress();
+    });
+    // Nav labels change length when the language switches — re-measure the
+    // active link and reposition the indicator (after layout reflows).
+    document.addEventListener("i18n:changed", function () {
+      requestAnimationFrame(positionIndicator);
     });
     updateProgress();
     if (sections[0]) setActiveNav(sections[0].id);
